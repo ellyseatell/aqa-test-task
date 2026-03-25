@@ -110,15 +110,16 @@ async verifyMenuItems(expectedItems: string[]) {
 
 async goToMenu(menuName: string) {
     // Locate the menu container
-    const menu = this.page.locator(".menu-list.other-menu-items");
+    const menu = this.page.locator('.menu-list.other-menu-items');
     await expect(menu).toBeVisible({ timeout: 5000 });
 
-    // Find the <a> element that exactly matches the menu name
-    const menuItem = menu.locator("li > a", { hasText: menuName });
+    // Find the <a> element inside the menu that matches the menu name
+    const menuItem = menu.locator('li > a', { hasText: menuName });
     await expect(menuItem).toBeVisible({ timeout: 5000 });
 
-    // Click it
+    // Click the menu item
     await menuItem.click();
+
     console.log(`Navigated to menu: "${menuName}"`);
   }
 

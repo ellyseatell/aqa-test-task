@@ -1,3 +1,4 @@
+
 Feature: Create Account - Registration
 
   As a new user
@@ -16,12 +17,13 @@ Feature: Create Account - Registration
     Then the account should be created successfully
     And the user should be logged in
 
+
   Scenario: Registration with existing email
     Given I am on the login page
     When the user clicks on Create account
     And the user is redirected to the registration page
     And the user enters a username that already exists
-    And the user enters an email that already exists
+    And the user enters a email that already exists
     And the user enters a password
     And the user submits the registration form
     Then an error message "A user with this username already exists." should be displayed

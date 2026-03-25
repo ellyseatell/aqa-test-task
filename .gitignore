@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Playwright test artifacts
+test-results/
+screenshots/
+videos/
+trace/
+
+# Global data / fixtures
+qa/tests/fixtures/globalData.json
+
+# Generated features
+.features-gen/
+# or just features-gen/ if it’s in root
+# features-gen/
+
+
+
+

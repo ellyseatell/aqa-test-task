@@ -64,7 +64,7 @@ When('the user enters a username that already exists', async () => {
   await createaccountpage.fillUsername(globalData.createdUser.username);
 });
 
-When('the user enters an email that already exists', async () => {
+When('the user enters a email that already exists', async () => {
   if (!globalData.createdUser) throw new Error('No user stored globally!');
   await createaccountpage.fillEmail(globalData.createdUser.email);
 });

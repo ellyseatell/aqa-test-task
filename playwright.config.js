@@ -2,6 +2,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 import dotenv from 'dotenv';
+import globalSetup from './qa/fixtures/global-setup';
+
 
 
 
@@ -11,6 +13,7 @@ dotenv.config({ path: envFile });
 
 
 const testDir = defineBddConfig ({
+  
 paths: [
 
   'qa/tests/features/**/*.feature'
@@ -19,7 +22,9 @@ paths: [
 steps: [
   'qa/fixtures/testContext.ts',      // fixture
   'qa/tests/step-definitions/**/*.ts' ,    // all step files
-  'qa/fixtures/globaldata.ts'
+  'qa/fixtures/globaldata.ts',
+    'qa/fixtures/global-setup.ts'
+
 ],
 //require : ['qa/tests/step-definitions/steps.ts']
 require: ['qa/tests/step-definitions/**/*.ts'], // ✅ load ALL step files
@@ -30,6 +35,7 @@ require: ['qa/tests/step-definitions/**/*.ts'], // ✅ load ALL step files
 export default defineConfig({
   // Folder where your test files are located
   testDir,
+  globalSetup:'./qa/fixtures/global-setup' ,
   grepInvert: /@skip/, //run everything except the features tagged with @skip
 
   // Timeout per test

@@ -5,6 +5,7 @@ type TestContext = {
   email: string;
   username: string;
   password: string;
+  teamname: string
 };
 
 export const test = base.extend<TestContext>({
@@ -21,6 +22,10 @@ export const test = base.extend<TestContext>({
   password: async ({}, use) => {
     await use('Welcome@123');
   },
-
+ 
+//   teamname: async ({}, use) => {
+//     const timestamp = Date.now();
+//     await use(`team${timestamp}`);
+//   },
   
 });
