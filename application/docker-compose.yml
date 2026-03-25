@@ -9,8 +9,11 @@ services:
       MYSQL_USER: vikunja
       MYSQL_PASSWORD: vicunja_password
       MYSQL_DATABASE: vikunja
+      
     volumes:
       - vikunja_db:/var/lib/mysql
+    ports:
+      - 8081:3306  
     restart: unless-stopped
 
   vikunja:
